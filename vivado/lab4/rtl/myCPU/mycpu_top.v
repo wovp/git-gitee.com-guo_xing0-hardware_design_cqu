@@ -16,7 +16,7 @@ module mycpu_top(
     input  [31:0] data_sram_rdata
 );
 
-// 一个例子
+// �?个例�?
 	wire [31:0] pc;
 	wire [31:0] instr;
 	wire memwrite;
@@ -26,14 +26,14 @@ module mycpu_top(
         .rst(~resetn),
         //instr
         // .inst_en(inst_en),
-        .pc(pc),                    //pcF
-        .instr(instr),              //instrF
+        .pcF(pc),                    //pcF
+        .instrF(instr),              //instrF
         //data
         // .data_en(data_en),
-        .memwrite(memwrite),
-        .aluout(aluout),
-        .writedata(writedata),
-        .readdata(readdata)
+        .memwriteM(memwrite),
+        .aluoutM(aluout),
+        .writedataM(writedata),
+        .readdataM(readdata)
     );
 
     assign inst_sram_en = 1'b1;     //如果有inst_en，就用inst_en
