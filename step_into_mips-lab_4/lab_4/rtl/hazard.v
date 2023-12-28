@@ -89,6 +89,8 @@ module hazard(
 	assign #1 stallF = stallD;
 		//stalling D stalls all previous stages
 	assign #1 flushE = stallD;
+	
+	
 		//stalling D flushes next stage
 	// Note: not necessary to stall D stage on store
   	//       if source comes from load;

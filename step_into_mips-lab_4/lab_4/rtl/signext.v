@@ -22,8 +22,9 @@
 
 module signext(
 	input wire[15:0] a,
+	input wire[5:0] opD,
 	output wire[31:0] y
     );
 
-	assign y = {{16{a[15]}},a};
+	assign y = (opD == 6'b000000) ? {{16{a[15]}},a}: {{16{1'b0}}, a};
 endmodule

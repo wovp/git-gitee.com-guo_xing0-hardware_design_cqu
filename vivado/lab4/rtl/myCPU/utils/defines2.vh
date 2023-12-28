@@ -29,7 +29,7 @@
 `define AHB_WAIT_FOR_STALL 2'b11
 
 //specific inst macro definition
-
+// funct 5 - 0
 `define NOP			6'b000000
 `define AND 		6'b100100
 `define OR 			6'b100101
