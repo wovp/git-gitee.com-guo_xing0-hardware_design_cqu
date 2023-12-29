@@ -23,6 +23,7 @@
 
 module alu(
 	input wire[31:0] a,b,
+	input wire [4:0] sa,
 	input wire[4:0] op,
 	output reg[31:0] y,
 	output reg overflow,
@@ -39,6 +40,12 @@ module alu(
 			`XOR_CONTROL: y <= a ^ b;
 			`NOR_CONTROL: y <= ~(a | b);
 			`LUI_CONTROL: y <= { b[15:0],16'b0 };
+			`SLL_CONTROL: y <= b << sa;
+			`SLLV_CONTROL: y <= b << a[4:0];
+			`SRL_CONTROL: y <= b >> sa;
+			`SRLV_CONTROL: y <= b >> a[4:0];
+			`SRA_CONTROL: y <= ({32{b[31]}} << (6'd32 -{1'b0,sa})) | b >> sa;
+			`SRAV_CONTROL: y <= ({32{b[31]}} << (6'd32 -{1'b0,a[4:0]})) | b >> a[4:0];
 			default : y <= 32'b0;
 		endcase	
 	end

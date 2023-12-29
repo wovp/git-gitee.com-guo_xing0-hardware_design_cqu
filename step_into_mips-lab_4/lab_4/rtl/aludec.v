@@ -33,6 +33,12 @@ module aludec(
 			     `OR : alucontrol <= `OR_CONTROL;
 			     `XOR : alucontrol <= `XOR_CONTROL;
 			     `NOR : alucontrol <= `NOR_CONTROL;
+			     `SLL : alucontrol <= `SLL_CONTROL;
+			     `SLLV : alucontrol <= `SLLV_CONTROL;
+			     `SRL : alucontrol <= `SRL_CONTROL;
+			     `SRLV : alucontrol <= `SRLV_CONTROL;
+			     `SRA : alucontrol <= `SRA_CONTROL;
+			     `SRAV : alucontrol <= `SRAV_CONTROL;
 			default  alucontrol <= 5'b00000;
 			endcase
 			`ANDI: alucontrol <= `AND_CONTROL;
